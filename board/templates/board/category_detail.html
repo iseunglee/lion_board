@@ -1,0 +1,17 @@
+<h1>category_detail.html</h1>
+
+<div>
+    <h2>{{ object.ct_name }}</h2>
+</div>
+
+<br>
+
+
+{% for item in object.item_set.all %}
+<div>
+    <a href="{% url 'board:item_detail' item.id %}"><img src="{{ item.image.thumb_url }}"></a>
+</div>
+<ul>
+    <li>{{ item.it_name }}</li>
+</ul>
+{% endfor %}

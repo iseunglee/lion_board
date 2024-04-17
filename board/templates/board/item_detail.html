@@ -1,0 +1,17 @@
+<h1>item_detail.html</h1>
+
+<br>
+
+<h2>{{ object.it_name }}</h2>
+<div>
+    <a href="{{ object.image.url }}"><img src="{{ object.image.url }}"></a>
+</div>
+
+<ul>
+    <li>Item description</li>
+        {% if object.description %}<p>{{ object.description|linebreaks }}</p>
+        {% else %}<p>blank</p>{% endif %}
+
+    <li>Category name</li>
+        <a href="{ % url 'board:category_detail' object.category.id %}">{{ object.category.ct_name }}</a>
+</ul>

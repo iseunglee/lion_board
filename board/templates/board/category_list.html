@@ -1,0 +1,8 @@
+<h1>category_list.html</h1>
+
+<div>
+    {% for cate in object_list %}
+    <a class="h2" href="{% url 'board:category_detail' cate.id %}">{{cate.ct_name}}</a>
+    {% endfor %}
+</div>
+
